@@ -56,9 +56,29 @@ $posts = [
 
   <h2>Posts</h2>
   <?php
-    echo 
-    
-    var_dump($posts['10/02/2019'][0]);
+    foreach($posts as $date){
+        //data
+        echo "<h2>Post del: ";
+        echo array_keys($posts, $date)[0];
+        echo "</h2>";
+        
+        foreach($date as $post){
+            //post title
+            echo "<h3>";
+            echo $post ['title'];
+            echo "</h3>";
+
+            //post text
+            echo "<p>";
+            echo $post['text'];
+            echo "</p>";
+
+            //post author
+            echo "<span>Writen by: ";
+            echo $post['author'];
+            echo "</span>";
+        }
+    }
   ?>
 </body>
 </html>
