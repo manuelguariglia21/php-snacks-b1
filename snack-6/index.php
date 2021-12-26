@@ -33,12 +33,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Snack 6</title>
 </head>
+<style>
+  .teachers{
+    width: 100%;
+    background-color: grey;
+  }
+  .pm{
+    width: 100%;
+    background-color: green;
+  }
+</style>
 <body>
   <h1>Snack 6</h1>
 
   <?php
-    echo "<div>";
     foreach($db as $role){
+      if(array_keys($db, $role)[0] === 'teachers'){
+        echo "<div class='teachers'>";
+      }
+      if(array_keys($db, $role)[0] === 'pm'){
+        echo "<div class='pm'>";
+      }
       echo "<h2>";
       echo array_keys($db, $role)[0];
       echo ":</h2>";
